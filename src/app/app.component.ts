@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommunicationService } from './shared/services/communication.service';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -6,8 +7,14 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'RochePharmaApp';
+  message: string = '';
+
+  constructor(private communicationService: CommunicationService) {}
+
+  sendMessage() {
+    this.communicationService.changeMessage('Hello from Main Component');
+  }
 }
