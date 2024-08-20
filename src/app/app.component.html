@@ -1,5 +1,13 @@
-<div>
-  <h1>Main Application</h1>
-  <button (click)="sendMessage()">Send Message to Lazy Module</button>
-  <router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <span>Main Application</span>
+</mat-toolbar>
+<div class="messages">
+  <button mat-raised-button color="accent" (click)="sendMessage()">
+    Send Message to Lazy Module
+  </button>
+  <button mat-raised-button color="warn" (click)="resetAllMessages()">
+    Reset All Messages
+  </button>
 </div>
+
+<router-outlet></router-outlet>

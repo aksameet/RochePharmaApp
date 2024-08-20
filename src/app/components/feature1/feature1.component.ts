@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { CommunicationService } from '../shared/communication.service';
+import { CommunicationService } from '../../shared/services/communication.service';
 import { Router, RouterLink, Routes } from '@angular/router';
+import { MaterialModule } from '../../shared/modules/material.module';
 
 @Component({
   selector: 'app-feature1',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, MaterialModule],
   templateUrl: './feature1.component.html',
   styleUrl: './feature1.component.scss',
 })

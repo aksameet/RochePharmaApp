@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Extra 2 Component</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Component loaded dynamically.</p>
+    <p>
+      Message from Extra 1: <strong>{{ extra1Message }}</strong>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" routerLink="/feature1">
+      <mat-icon>arrow_back</mat-icon>
+      Go to Feature 1
+    </button>
+    <button mat-raised-button color="accent" (click)="sendMessageToFeature2()">
+      <mat-icon>send</mat-icon>
+      Send Message to Feature 2
+    </button>
+  </mat-card-actions>
+</mat-card>

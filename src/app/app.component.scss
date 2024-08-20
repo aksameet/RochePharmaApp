@@ -1,0 +1,9 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  button {
+    max-width: 300px;
+    margin: 16px;
+  }
+}

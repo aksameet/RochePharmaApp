@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { CommunicationService } from './shared/communication.service';
+import { RouterOutlet } from '@angular/router';
+import { CommunicationService } from './shared/services/communication.service';
+import { MaterialModule } from './shared/modules/material.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MaterialModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -14,5 +15,9 @@ export class AppComponent {
 
   sendMessage() {
     this.communicationService.changeMessage('Hello from Main App!');
+  }
+
+  resetAllMessages() {
+    this.communicationService.resetAllMessages();
   }
 }

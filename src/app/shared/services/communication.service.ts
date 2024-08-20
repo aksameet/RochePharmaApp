@@ -33,4 +33,11 @@ export class CommunicationService {
   changeFeature2Message(message: string) {
     this.feature2MessageSource.next(message);
   }
+
+  resetAllMessages() {
+    this.messageSource.next('No mesage');
+    this.extra1MessageSource.next('No mesage');
+    this.extra2MessageSource.next('No mesage');
+    this.feature2MessageSource.next('No mesage');
+  }
 }

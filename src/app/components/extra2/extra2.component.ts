@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { CommunicationService } from '../shared/communication.service';
+import { CommunicationService } from '../../shared/services/communication.service';
+import { MaterialModule } from '../../shared/modules/material.module';
 
 @Component({
   selector: 'app-extra2',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, MaterialModule],
   templateUrl: './extra2.component.html',
   styleUrl: './extra2.component.scss',
 })
