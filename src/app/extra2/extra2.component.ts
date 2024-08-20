@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { CommunicationService } from '../shared/communication.service';
 
 @Component({
   selector: 'app-extra2',
@@ -8,4 +9,22 @@ import { RouterLink } from '@angular/router';
   templateUrl: './extra2.component.html',
   styleUrl: './extra2.component.scss',
 })
-export class Extra2Component {}
+export class Extra2Component {
+  extra1Message: string = '';
+
+  constructor(
+    private communicationService: CommunicationService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.communicationService.currentExtra1Message.subscribe(
+      (message) => (this.extra1Message = message)
+    );
+  }
+
+  sendMessageToFeature2() {
+    this.communicationService.changeFeature2Message('Message from Extra 2');
+    this.router.navigate(['/feature2']);
+  }
+}

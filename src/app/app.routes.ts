@@ -16,4 +16,9 @@ export const routes: Routes = [
     redirectTo: 'feature1',
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    redirectTo: 'feature1',
+    pathMatch: 'full',
+  },
 ];
