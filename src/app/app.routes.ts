@@ -1,10 +1,19 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
-    path: 'home',
+    path: 'feature1',
     loadComponent: () =>
-      import('./lazy/lazy.component').then((m) => m.LazyComponent),
+      import('./feature1/feature1.component').then((m) => m.Feature1Component),
+  },
+  {
+    path: 'feature2',
+    loadComponent: () =>
+      import('./feature2/feature2.component').then((m) => m.Feature2Component),
+  },
+  {
+    path: '',
+    redirectTo: 'feature1',
+    pathMatch: 'full',
   },
 ];

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommunicationService } from './shared/services/communication.service';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { CommunicationService } from './shared/communication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  message: string = '';
-
   constructor(private communicationService: CommunicationService) {}
 
   sendMessage() {
-    this.communicationService.changeMessage('Hello from Main Component');
+    this.communicationService.changeMessage('Hello from Main App!');
   }
 }
